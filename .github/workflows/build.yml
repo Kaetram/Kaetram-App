@@ -67,7 +67,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          projectPath: Kaetram-App/Kaetram-Open
+          projectPath: Kaetram-App
           releaseId: ${{ needs.create-release.outputs.release_id }}
 
   publish-release:
