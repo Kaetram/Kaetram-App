@@ -49,13 +49,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - run: cd Kaetram-Open
       - name: setup node
         uses: actions/setup-node@v3
         with:
           node-version: 16
-
-      - name: Enable Corepack
-        run: corepack enable
+          cache: yarn
+      - run: cd ..
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
