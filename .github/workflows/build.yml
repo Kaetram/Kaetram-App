@@ -18,8 +18,7 @@ jobs:
 
       - name: get version
         run:
-          echo "PACKAGE_VERSION=$(node -p
-          "require('./Kaetram-Open/package.json').version")" >> $GITHUB_ENV
+          echo "PACKAGE_VERSION=$(node -p "require('./Kaetram-Open/package.json').version")" >> $GITHUB_ENV
 
       - name: create release
         id: create-release
@@ -63,7 +62,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          projectPath: Kaetram-App
+          projectPath:  /Users/runner/work/Kaetram-App/Kaetram-App
           releaseId: ${{ needs.create-release.outputs.release_id }}
 
   publish-release:
