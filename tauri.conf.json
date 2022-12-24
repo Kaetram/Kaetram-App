@@ -1,7 +1,7 @@
 {
   "build": {
     "beforeDevCommand": "cd ../Kaetram-Open && yarn && yarn workspace @kaetram/client dev --host",
-    "beforeBuildCommand": "cd ../Kaetram-Open && yarn && yarn workspace @kaetram/client build",
+    "beforeBuildCommand": "pwd && ls && yarn && yarn workspace @kaetram/client build",
     "devPath": "http://localhost:9000",
     "distDir": "../Kaetram-Open/packages/client/dist",
     "withGlobalTauri": true
