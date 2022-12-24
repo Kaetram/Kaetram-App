@@ -1,6 +1,6 @@
 name: Kaetram-App CI
 
-on: pull_request
+on: workflow_dispatch
 
 jobs:
   create-release:
