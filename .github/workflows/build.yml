@@ -16,9 +16,6 @@ jobs:
         with:
           node-version: 16
 
-      - name: Enable Corepack
-        run: corepack enable
-
       - name: get version
         run:
           echo "PACKAGE_VERSION=$(node -p
@@ -56,6 +53,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
