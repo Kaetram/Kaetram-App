@@ -21,21 +21,21 @@ android {
         val ndkHome = System.getenv("NDK_HOME")
         jniLibs.srcDir("${ndkHome}/sources/third_party/vulkan/src/build-android/jniLibs")
     }
-    signingConfigs {
-        val properties = Properties()
-        val propFile = rootProject.file("local.properties")
+    // signingConfigs {
+    //     val properties = Properties()
+    //     val propFile = rootProject.file("local.properties")
 
-        if (propFile.exists()) {
-            properties.load(propFile.inputStream())
-        }
+    //     if (propFile.exists()) {
+    //         properties.load(propFile.inputStream())
+    //     }
 
-        create("release") {
-            keyAlias = properties.getProperty("keyAlias")
-            keyPassword = properties.getProperty("keyPassword")
-            storeFile = file(properties.getProperty("storeFile"))
-            storePassword = properties.getProperty("storePassword")
-        }
-    }
+    //     create("release") {
+    //         keyAlias = properties.getProperty("keyAlias")
+    //         keyPassword = properties.getProperty("keyPassword")
+    //         storeFile = file(properties.getProperty("storeFile"))
+    //         storePassword = properties.getProperty("storePassword")
+    //     }
+    // }
     buildTypes {
         getByName("debug") {
             manifestPlaceholders["usesCleartextTraffic"] = "true"
@@ -53,7 +53,7 @@ android {
             }
         }
         getByName("release") {
-            signingConfig = signingConfigs.getByName("release")
+            // signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
