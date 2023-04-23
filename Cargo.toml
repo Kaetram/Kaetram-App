@@ -2,7 +2,7 @@
 edition = "2021"
 name = "app"
 rust-version = "1.57"
-version = "2.5.0"
+version = "2.5.1"
 
 [lib]
 crate-type = ["staticlib", "cdylib", "rlib"]

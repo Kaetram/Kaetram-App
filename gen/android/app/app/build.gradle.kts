@@ -13,8 +13,8 @@ android {
         applicationId = "com.kaetram.app"
         minSdk = 24
         targetSdk = 33
-        versionCode = 4
-        versionName = "2.3.0b"
+        versionCode = 253
+        versionName = "2.5.1b"
     }
     sourceSets.getByName("main") {
         // Vulkan validation layers
