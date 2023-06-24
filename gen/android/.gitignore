@@ -16,6 +16,7 @@ buildSrc
 .cxx
 local.properties
 key.properties
+.editorconfig
 
 /.tauri
 /tauri.settings.gradle
