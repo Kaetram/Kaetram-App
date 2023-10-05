@@ -15,7 +15,7 @@ android {
         minSdk = 24
         targetSdk = 33
         versionCode = 22
-        versionName = "1.0.0-beta"
+        versionName = "v1.0.0"
     }
     signingConfigs {
         val properties = Properties()
