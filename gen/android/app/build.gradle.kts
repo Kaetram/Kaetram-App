@@ -14,8 +14,8 @@ android {
         applicationId = "com.kaetram.app"
         minSdk = 24
         targetSdk = 33
-        versionCode = 21
-        versionName = "2.4.0"
+        versionCode = 22
+        versionName = "1.0.0-beta"
     }
     signingConfigs {
         val properties = Properties()
@@ -38,7 +38,8 @@ android {
             isDebuggable = true
             isJniDebuggable = true
             isMinifyEnabled = false
-            packaging {                jniLibs.keepDebugSymbols.add("*/arm64-v8a/*.so")
+            packaging {
+                jniLibs.keepDebugSymbols.add("*/arm64-v8a/*.so")
                 jniLibs.keepDebugSymbols.add("*/armeabi-v7a/*.so")
                 jniLibs.keepDebugSymbols.add("*/x86/*.so")
                 jniLibs.keepDebugSymbols.add("*/x86_64/*.so")
