@@ -14,7 +14,7 @@ android {
         applicationId = "com.kaetram.app"
         minSdk = 24
         targetSdk = 33
-        versionCode = 22
+        versionCode = 1000
         versionName = "v1.0.0"
     }
     signingConfigs {
