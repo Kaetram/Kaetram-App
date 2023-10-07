@@ -14,8 +14,8 @@ android {
         applicationId = "com.kaetram.app"
         minSdk = 24
         targetSdk = 33
-        versionCode = 1000
-        versionName = "v1.0.0"
+        versionCode = 1000100
+        versionName = "v1.0.1"
     }
     signingConfigs {
         val properties = Properties()
