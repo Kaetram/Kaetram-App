@@ -275,6 +275,6 @@ fabric.properties
 
 ### AndroidStudio Patch ###
 
-# !/gradle/wrapper/gradle-wrapper.jar
+!/gradle/wrapper/gradle-wrapper.jar
 
 # https://www.toptal.com/developers/gitignore?templates=swift,xcode,kotlin,android,androidstudio
