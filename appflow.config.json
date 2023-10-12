@@ -1,0 +1,8 @@
+{
+    "apps": [
+        {
+            "appId": "01c1ff67",
+            "dependencyInstallCommand": "yarn"
+        }
+    ]
+}
