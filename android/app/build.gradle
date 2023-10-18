@@ -7,8 +7,8 @@ android {
         applicationId "com.kaetram.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1000202
-        versionName "v1.0.2b"
+        versionCode 1100000
+        versionName "v1.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
