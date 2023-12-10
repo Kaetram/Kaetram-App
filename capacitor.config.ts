@@ -6,4 +6,5 @@ export default {
     webDir: '../client/dist/',
     backgroundColor: '#000000',
     server: { androidScheme: 'https' }
+    // android: { buildOptions: { signingType: 'apksigner' } }
 } satisfies CapacitorConfig;
