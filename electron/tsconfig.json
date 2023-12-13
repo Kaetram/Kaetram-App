@@ -1,0 +1,28 @@
+{
+    "compileOnSave": true,
+    "include": ["./src/**/*", "./capacitor.config.ts", "./capacitor.config.js"],
+    "extends": "../../../tsconfig.json",
+    "compilerOptions": {
+        // "rootDir": "./",
+        // "baseUrl": "./",
+
+        "strict": false,
+        "strictNullChecks": false,
+        "noImplicitAny": false,
+
+        "isolatedModules": false,
+        "verbatimModuleSyntax": false,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+
+        "outDir": "./build"
+        // "importHelpers": true,
+        // "target": "ES2017",
+        // "module": "CommonJS",
+        // "moduleResolution": "node",
+        // "esModuleInterop": true,
+        // "skipLibCheck": true
+        // "typeRoots": ["./node_modules/@types"],
+        // "allowJs": true
+    }
+}
