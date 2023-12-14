@@ -61,7 +61,7 @@ export class ElectronCapacitorApp {
     private loadWebApp;
     private customScheme: string;
 
-    constructor(
+    public constructor(
         capacitorFileConfig: CapacitorElectronConfig,
         trayMenuTemplate?: (MenuItemConstructorOptions | MenuItem)[],
         appMenuBarMenuTemplate?: (MenuItemConstructorOptions | MenuItem)[]
@@ -88,15 +88,15 @@ export class ElectronCapacitorApp {
     }
 
     // Expose the mainWindow ref for use outside of the class.
-    getMainWindow(): BrowserWindow {
+    public getMainWindow(): BrowserWindow {
         return this.MainWindow;
     }
 
-    getCustomURLScheme(): string {
+    public getCustomURLScheme(): string {
         return this.customScheme;
     }
 
-    async init(): Promise<void> {
+    public async init(): Promise<void> {
         let icon = nativeImage.createFromPath(
             join(
                 app.getAppPath(),
@@ -109,21 +109,15 @@ export class ElectronCapacitorApp {
             defaultHeight: 800
         });
         // Setup preload script path and construct our main window.
-        let preloadPath = join(app.getAppPath(), 'build', 'src', 'preload.js');
         this.MainWindow = new BrowserWindow({
             icon,
             show: false,
+            autoHideMenuBar: true,
             x: this.mainWindowState.x,
             y: this.mainWindowState.y,
             width: this.mainWindowState.width,
             height: this.mainWindowState.height,
-            webPreferences: {
-                nodeIntegration: true,
-                contextIsolation: true,
-                // Use preload to inject the electron varriant overrides for capacitor plugins.
-                // preload: join(app.getAppPath(), "node_modules", "@capacitor-community", "electron", "dist", "runtime", "electron-rt.js"),
-                preload: preloadPath
-            }
+            webPreferences: { nodeIntegration: false, contextIsolation: true }
         });
         this.mainWindowState.manage(this.MainWindow);
 

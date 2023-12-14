@@ -7,7 +7,7 @@ import {
 import { app, MenuItem } from 'electron';
 import electronIsDev from 'electron-is-dev';
 import unhandled from 'electron-unhandled';
-import { autoUpdater } from 'electron-updater';
+// import { autoUpdater } from 'electron-updater';
 
 import type { MenuItemConstructorOptions } from 'electron';
 import type { CapacitorElectronConfig } from '@capacitor-community/electron';
@@ -15,23 +15,11 @@ import type { CapacitorElectronConfig } from '@capacitor-community/electron';
 // Graceful handling of unhandled errors.
 unhandled();
 
-// Define our menu templates (these are optional)
-const trayMenuTemplate: (MenuItemConstructorOptions | MenuItem)[] = [
-        new MenuItem({ label: 'Quit App', role: 'quit' })
-    ],
-    appMenuBarMenuTemplate: (MenuItemConstructorOptions | MenuItem)[] = [
-        { role: process.platform === 'darwin' ? 'appMenu' : 'fileMenu' },
-        { role: 'viewMenu' }
-    ],
-    // Get Config options from capacitor.config
+let // Get Config options from capacitor.config
     capacitorFileConfig: CapacitorElectronConfig = getCapacitorElectronConfig(),
     // Initialize our app. You can pass menu templates into the app here.
     // const myCapacitorApp = new ElectronCapacitorApp(capacitorFileConfig);
-    myCapacitorApp = new ElectronCapacitorApp(
-        capacitorFileConfig,
-        trayMenuTemplate,
-        appMenuBarMenuTemplate
-    );
+    myCapacitorApp = new ElectronCapacitorApp(capacitorFileConfig);
 
 // If deeplinking is enabled then we will set it up here.
 if (capacitorFileConfig.electron?.deepLinkingEnabled)
@@ -47,11 +35,11 @@ if (electronIsDev) setupReloadWatcher(myCapacitorApp);
     // Wait for electron app to be ready.
     await app.whenReady();
     // Security - Set Content-Security-Policy based on whether or not we are in dev mode.
-    setupContentSecurityPolicy(myCapacitorApp.getCustomURLScheme());
+    // setupContentSecurityPolicy(myCapacitorApp.getCustomURLScheme());
     // Initialize our app, build windows, and load content.
     await myCapacitorApp.init();
     // Check for updates if we are in a packaged app.
-    autoUpdater.checkForUpdatesAndNotify();
+    // autoUpdater.checkForUpdatesAndNotify();
 })();
 
 // Handle when all of our windows are close (platforms have their own expectations).
