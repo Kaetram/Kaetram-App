@@ -7,7 +7,7 @@ android {
         applicationId "com.kaetram.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10206001
+        versionCode 10206002
         versionName "v1.2.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
